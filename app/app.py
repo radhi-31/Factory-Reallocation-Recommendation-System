@@ -2,12 +2,17 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("../model/model.pkl")
+from pathlib import Path
 
-le_division = joblib.load("../model/le_division.pkl")
-le_region = joblib.load("../model/le_region.pkl")
-le_ship = joblib.load("../model/le_ship.pkl")
-le_factory = joblib.load("../model/le_factory.pkl")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+MODEL_DIR = BASE_DIR / "model"
+
+model = joblib.load(MODEL_DIR / "model.pkl")
+le_division = joblib.load(MODEL_DIR / "le_division.pkl")
+le_region = joblib.load(MODEL_DIR / "le_region.pkl")
+le_ship = joblib.load(MODEL_DIR / "le_ship.pkl")
+le_factory = joblib.load(MODEL_DIR / "le_factory.pkl")
 
 st.set_page_config(
     page_title="Factory Recommendation System",

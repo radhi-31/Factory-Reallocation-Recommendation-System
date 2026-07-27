@@ -7,6 +7,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MODEL_DIR = BASE_DIR / "model"
+IMAGE_DIR = BASE_DIR / "images"
 
 model = joblib.load(MODEL_DIR / "model.pkl")
 le_division = joblib.load(MODEL_DIR / "le_division.pkl")
@@ -44,7 +45,7 @@ st.markdown("""
 col1, col2 = st.columns([1, 5])
 
 with col1:
-    st.image("../images/logo.png", width=180)
+    st.image(IMAGE_DIR / "logo.png", width=180)
 
 with col2:
     st.title("Factory Reallocation Recommendation System")

@@ -87,9 +87,9 @@ cost = st.number_input("Cost", value=800.0)
 
 lead_time = st.slider(
     "Lead Time",
-    800,
-    1000,
-    900
+    1,
+    10,
+    7
 )
 predict = st.button(
     "🚀 Recommend Best Factory",
